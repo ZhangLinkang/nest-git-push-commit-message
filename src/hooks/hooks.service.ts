@@ -6,14 +6,10 @@ import * as moment from 'moment';
 export class HooksService {
   pushCommitMessage(query, body, res) {
     const webhook = query.webhook;
-    const ref = body.ref;
-    const branchName = body.project.default_branch;
+    const refs = body.ref.split('/');
+    const branchName = refs[refs.length - 1];
     const arr = ['master', 'prod'];
-    if (
-      arr.some((item) => {
-        return ref.indexOf(item) !== -1;
-      })
-    ) {
+    if (arr.includes(branchName)) {
       const projectName = body.project.name; //仓库名
       const commitMessages = body.commits;
       const enterStr = `\n`;
