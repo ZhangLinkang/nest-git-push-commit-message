@@ -7,7 +7,13 @@ export class HooksService {
   pushCommitMessage(query, body, res) {
     const webhook = query.webhook;
     const ref = body.ref;
-    if (ref.indexOf('master') !== -1) {
+    const branchName = body.project.default_branch;
+    const arr = ['master', 'prod'];
+    if (
+      arr.some((item) => {
+        return ref.indexOf(item) !== -1;
+      })
+    ) {
       const projectName = body.project.name; //仓库名
       const commitMessages = body.commits;
       const enterStr = `\n`;
@@ -32,7 +38,7 @@ export class HooksService {
           }\n`;
         })
         .join('');
-      const messages = `📦项目仓库：${projectName}-master\n${str}\n`;
+      const messages = `📦项目仓库：${projectName}-${branchName}\n${str}\n`;
 
       request(
         {
