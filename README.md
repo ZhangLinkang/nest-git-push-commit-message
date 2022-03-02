@@ -1,6 +1,6 @@
 ## 项目介绍
 
-使用`Nest.js`作为基础框架，主要实现GIT将代码推送至远程仓库后，触发Webhooks钩子，将提交信息处理后发送本程序进行格式处理后，再将处理后的数据发给`WebHooks机器人`，机器人将提交信息发送至（钉钉，企业微信等）工作群中
+使用`Nest.js`作为基础框架，主要实现 GIT 将代码推送至远程仓库后，触发 Webhooks 钩子，将提交信息处理后发送本程序进行格式处理后，再将处理后的数据发给`WebHooks机器人`，机器人将提交信息发送至（钉钉，企业微信等）工作群中
 
 ## 开发环境
 
@@ -8,7 +8,7 @@ node v14
 
 ## 贡献说明
 
-本项目已加入commitlint提交信息校验，请遵循angular提交规范
+本项目已加入 commitlint 提交信息校验，请遵循 angular 提交规范
 
 https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
 
