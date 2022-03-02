@@ -14,7 +14,7 @@ export class HooksService {
         return `\n------分割线------\n提交作者：${
           item.author.name
         }\n📅提交时间：${moment(item.timestamp).format(
-          'YYYY-MM-DD HH:mm:ss',
+          'YYYY-MM-DD HH:mm:ss'
         )}\nℹ️提交信息：${item.title}${
           item.modified.length
             ? `\n✴️修改文件：\n${item.modified.join(enterStr)}`
@@ -38,14 +38,14 @@ export class HooksService {
         method: 'POST',
         json: true,
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: {
           msgtype: 'text',
           text: {
-            content: messages,
-          },
-        },
+            content: messages
+          }
+        }
       },
       (error) => {
         console.log('这里是回调');
@@ -53,7 +53,7 @@ export class HooksService {
           return res.send({ code: '888888', msg: '发送失败', error });
         }
         return res.send({ code: '000000', msg: '发送成功' });
-      },
+      }
     );
   }
 }
