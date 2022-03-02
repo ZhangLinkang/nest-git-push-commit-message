@@ -60,7 +60,7 @@ export class HooksService {
           if (error) {
             return res.send({ code: '888888', msg: '发送失败', error });
           }
-          return res.send({ code: '000000', msg: '发送成功' });
+          return res.send({ code: '000000', msg: '发送成功1' });
         }
       );
     }
