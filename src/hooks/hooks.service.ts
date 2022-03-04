@@ -5,11 +5,17 @@ import * as moment from 'moment';
 @Injectable()
 export class HooksService {
   pushCommitMessage(query, body, res) {
+    // 要推送的分支
+    const pushBranchNames = ['master', 'prod', 'main'];
+
+    // 获取机器人地址
     const webhook = query.webhook;
+
+    // 获取当前分支的名字
     const refs = body.ref.split('/');
     const branchName = refs[refs.length - 1];
-    const arr = ['master', 'prod'];
-    if (arr.includes(branchName)) {
+
+    if (pushBranchNames.includes(branchName)) {
       const projectName = body.project.name; //仓库名
       const commitMessages = body.commits;
       const enterStr = `\n`;
@@ -56,7 +62,7 @@ export class HooksService {
           if (error) {
             return res.send({ code: '888888', msg: '发送失败', error });
           }
-          return res.send({ code: '000000', msg: '发送成功1' });
+          return res.send({ code: '000000', msg: '发送成功' });
         }
       );
     }
