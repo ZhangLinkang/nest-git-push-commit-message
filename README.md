@@ -8,15 +8,19 @@ node v14
 
 ## 贡献说明
 
-本项目已加入 commitlint 提交信息校验，请遵循 angular 提交规范
+本项目已加入 commitlint 提交信息校验，请遵循 angular 提交规范 + emoji 表情
 
 https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
 
 **提交示例**
 
 ```
-fix:(repayment): 修复还款利息计算错误
-fix:(还款管理): 修复还款利息计算错误
-perf:(生成管理): 添加报表带出功能
-style:(仪表盘): 修改数据显示布局
+🐛fix:(repayment): 修复还款利息计算错误
+🐛fix:(还款管理): 修复还款利息计算错误
+🚀perf:(生成管理): 添加报表带出功能
+💎style:(仪表盘): 修改数据显示布局
 ```
+
+**交互提交**
+
+推荐使用 git-cz 提交本项目`npm run commit`
