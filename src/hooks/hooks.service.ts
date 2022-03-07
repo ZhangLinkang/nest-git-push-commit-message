@@ -17,9 +17,10 @@ export class HooksService {
 
     if (pushBranchNames.includes(branchName)) {
       const projectName = body.project.name; //仓库名
-      const commitMessages = body.commits;
+      const commitMessages: any[] = body.commits;
       const enterStr = `\n`;
       const str = commitMessages
+        .filter((item) => item.title.indexOf('Merge branch') == -1)
         .map((item) => {
           return `\n------分割线------\n提交作者：${
             item.author.name

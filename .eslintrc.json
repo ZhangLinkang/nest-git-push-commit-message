@@ -14,7 +14,7 @@
     "node": true,
     "jest": true
   },
-  "ignorePatterns": [".eslintrc.json"],
+
   "rules": {
     "prettier/prettier": ["warn", { "trailingComma": false }],
     "@typescript-eslint/interface-name-prefix": "off",
@@ -23,6 +23,13 @@
     "@typescript-eslint/no-explicit-any": "off",
     "eqeqeq": "error",
     "semi": "error",
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "object-shorthand": "error",
+    "prefer-const": "error",
+    "no-const-assign": "error",
+    "no-var": "error",
+    "comma-spacing": [2, { "before": false, "after": true }],
+    // 禁止对象字面量中出现重复的 key
+    "no-dupe-keys": 2
   }
 }
